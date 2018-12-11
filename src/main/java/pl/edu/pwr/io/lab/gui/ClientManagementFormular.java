@@ -11,33 +11,47 @@ public class ClientManagementFormular {
 
     private ClientManager clientManager = new ClientManager();
 
-    public void show() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("+++ Client Management Form +++");
+    private void showMenu(){
+        System.out.println("\n+++ Client Management Form +++");
         System.out.println("1 - show all clients data");
         System.out.println("2 - show selected client data");
         System.out.println("3 - add new client");
         System.out.println("4 - modify client data");
+        System.out.println("5 - EXIT");
         System.out.print("> ");
+    }
+
+    public void show() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        showMenu();
         String userChoice = scanner.next();
 
         switch (userChoice)
         {
             case "1":
                 clientManager.showAllClientData();
+                show();
                 break;
             case "2":
+                scanner.nextLine();
                 System.out.println("\nClientID: ");
                 String clientID = scanner.nextLine();
                 clientManager.showClientData(clientID);
+                show();
                 break;
             case "3":
                 addNewClient();
+                show();
                 break;
             case "4":
                 // modifyCustomerData();
+                show();
+                break;
+            case "5":
+                System.out.println("Saving application data...");
+                System.out.println("Exiting...");
                 break;
         }
     }
@@ -69,5 +83,7 @@ public class ClientManagementFormular {
                 registrationDate);
 
         clientManager.addNewClient(newClient);
+        System.out.println("\nNew client added to database: ");
+        clientManager.showClientData(newClientID);
     }
 }
