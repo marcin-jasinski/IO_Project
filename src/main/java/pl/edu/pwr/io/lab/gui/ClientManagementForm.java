@@ -7,7 +7,7 @@ import main.java.pl.edu.pwr.io.lab.person.Client;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class ClientManagementFormular {
+public class ClientManagementForm {
 
     private ClientManager clientManager = new ClientManager();
 

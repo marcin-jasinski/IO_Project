@@ -1,9 +1,8 @@
 package main.java;
 
-import main.java.pl.edu.pwr.io.lab.gui.ClientManagementFormular;
-import main.java.pl.edu.pwr.io.lab.gui.RentingManagementFromular;
-import main.java.pl.edu.pwr.io.lab.gui.ReservationManagementFormular;
-import main.java.pl.edu.pwr.io.lab.manager.ClientManager;
+import main.java.pl.edu.pwr.io.lab.gui.ClientManagementForm;
+import main.java.pl.edu.pwr.io.lab.gui.RentingManagementFrom;
+import main.java.pl.edu.pwr.io.lab.gui.ReservationManagementForm;
 import main.java.pl.edu.pwr.io.lab.manager.RentingManager;
 import main.java.pl.edu.pwr.io.lab.manager.ReservationManager;
 
@@ -32,16 +31,16 @@ public class Main {
         switch (userChoice)
         {
             case "1":
-                ClientManagementFormular clientManagementFormular = new ClientManagementFormular();
-                clientManagementFormular.show();
+                ClientManagementForm clientManagementForm = new ClientManagementForm();
+                clientManagementForm.show();
                 break;
             case "2":
-                ReservationManagementFormular reservationManagementFormular = new ReservationManagementFormular();
-                // reservationManagementFormular.show();
+                ReservationManagementForm reservationManagementForm = new ReservationManagementForm();
+                // reservationManagementForm.show();
                 break;
             case "3":
-                RentingManagementFromular rentingManagementFromular = new RentingManagementFromular();
-                // rentingManagementFromular.show();
+                RentingManagementFrom rentingManagementFrom = new RentingManagementFrom();
+                // rentingManagementFrom.show();
                 break;
         }
     }
