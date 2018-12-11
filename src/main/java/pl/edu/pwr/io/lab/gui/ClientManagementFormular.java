@@ -71,7 +71,7 @@ public class ClientManagementFormular {
         String newClientSurname = scanner.nextLine();
         System.out.print("Personal ID: ");
         String newClientPersonalID = scanner.nextLine();
-        System.out.print("Date of Birth: ");
+        System.out.print("Date of Birth (YYYY-MM-DD): ");
         String newClientBirthDate = scanner.nextLine();
         String registrationDate = LocalDate.now().toString();
 
