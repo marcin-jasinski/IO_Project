@@ -1,7 +1,7 @@
 package main.java;
 
 import main.java.pl.edu.pwr.io.lab.gui.ClientManagementFormular;
-import main.java.pl.edu.pwr.io.lab.gui.RentingManagementFromular;
+import main.java.pl.edu.pwr.io.lab.gui.RentingManagementFormular;
 import main.java.pl.edu.pwr.io.lab.gui.ReservationManagementFormular;
 
 import java.util.Scanner;
@@ -37,17 +37,17 @@ public class Main {
             case "1":
                 ClientManagementFormular clientManagementFormular = new ClientManagementFormular();
                 clientManagementFormular.show();
-                showMainMenu();
+                showApplication();
                 break;
             case "2":
                 ReservationManagementFormular reservationManagementFormular = new ReservationManagementFormular();
                 reservationManagementFormular.show();
-                showMainMenu();
+                showApplication();
                 break;
             case "3":
-                RentingManagementFromular rentingManagementFromular = new RentingManagementFromular();
-                rentingManagementFromular.show();
-                showMainMenu();
+                RentingManagementFormular rentingManagementFormular = new RentingManagementFormular();
+                rentingManagementFormular.show();
+                showApplication();
                 break;
             case "4":
                 System.out.println("Exiting...");
