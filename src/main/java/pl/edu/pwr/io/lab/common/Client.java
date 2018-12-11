@@ -1,7 +1,6 @@
-package main.java.pl.edu.pwr.io.lab.person;
+package main.java.pl.edu.pwr.io.lab.common;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Client {
 

@@ -10,32 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-
-        showMainMenu();
-        String userChoice = scanner.next();
-
-        switch (userChoice)
-        {
-            case "1":
-                ClientManagementFormular clientManagementFormular = new ClientManagementFormular();
-                clientManagementFormular.show();
-                showMainMenu();
-                break;
-            case "2":
-                ReservationManagementFormular reservationManagementFormular = new ReservationManagementFormular();
-                // reservationManagementFormular.show();
-                showMainMenu();
-                break;
-            case "3":
-                RentingManagementFromular rentingManagementFromular = new RentingManagementFromular();
-                // rentingManagementFromular.show();
-                showMainMenu();
-                break;
-            case "4":
-                System.out.println("Exiting...");
-                break;
-        }
+        showApplication();
     }
 
     private static void showMainMenu(){
@@ -48,5 +23,35 @@ public class Main {
         System.out.println("3 - show renting management form.");
         System.out.println("4 - EXIT");
         System.out.print("> ");
+    }
+
+    private static void showApplication(){
+
+        Scanner scanner = new Scanner(System.in);
+        showMainMenu();
+
+        String userChoice = scanner.next();
+
+        switch (userChoice)
+        {
+            case "1":
+                ClientManagementFormular clientManagementFormular = new ClientManagementFormular();
+                clientManagementFormular.show();
+                showMainMenu();
+                break;
+            case "2":
+                ReservationManagementFormular reservationManagementFormular = new ReservationManagementFormular();
+                reservationManagementFormular.show();
+                showMainMenu();
+                break;
+            case "3":
+                RentingManagementFromular rentingManagementFromular = new RentingManagementFromular();
+                rentingManagementFromular.show();
+                showMainMenu();
+                break;
+            case "4":
+                System.out.println("Exiting...");
+                break;
+        }
     }
 }

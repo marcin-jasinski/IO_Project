@@ -2,7 +2,7 @@ package main.java.pl.edu.pwr.io.lab.gui;
 
 import main.java.pl.edu.pwr.io.lab.factory.ClientFactory;
 import main.java.pl.edu.pwr.io.lab.manager.ClientManager;
-import main.java.pl.edu.pwr.io.lab.person.Client;
+import main.java.pl.edu.pwr.io.lab.common.Client;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -92,6 +92,7 @@ public class ClientManagementFormular {
     }
 
     private void modifyClientData(){
+
         System.out.println("\nClientID: ");
         scanner.nextLine();
         String clientID = scanner.nextLine();
@@ -114,6 +115,8 @@ public class ClientManagementFormular {
 
             System.out.println("\nUpdated client data:");
             clientManager.showClientData(clientID);
+        } else {
+            System.out.println("\nThere is no such client in the database.");
         }
     }
 }

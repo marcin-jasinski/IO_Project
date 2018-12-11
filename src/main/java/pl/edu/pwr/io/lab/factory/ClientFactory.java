@@ -1,6 +1,6 @@
 package main.java.pl.edu.pwr.io.lab.factory;
 
-import main.java.pl.edu.pwr.io.lab.person.Client;
+import main.java.pl.edu.pwr.io.lab.common.Client;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
