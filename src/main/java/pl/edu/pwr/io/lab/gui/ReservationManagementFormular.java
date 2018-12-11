@@ -35,7 +35,7 @@ public class ReservationManagementFormular {
                 show();
                 break;
             case "3":
-                System.out.println("This functionality is not available");
+                deleteReservationForClient();
                 show();
                 break;
             case "4":
@@ -54,5 +54,19 @@ public class ReservationManagementFormular {
         scanner.nextLine();
         String clientID = scanner.nextLine();
         reservationManager.showReservationsForClient(clientID);
+    }
+
+    private void deleteReservationForClient(){
+
+        System.out.println("\nClientID: ");
+        scanner.nextLine();
+        String clientID = scanner.nextLine();
+
+        reservationManager.showReservationsForClient(clientID);
+
+        System.out.println("\nReservation ID: ");
+        String reservationID = scanner.nextLine();
+
+        reservationManager.deleteReservation(reservationID);
     }
 }

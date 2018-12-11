@@ -6,14 +6,14 @@ import java.time.LocalDate;
 
 public class Reservation {
 
-    private int reservationNumber;
+    private String reservationNumber;
     private String clientID;
     private int employeeNumber;
     private LocalDate reservationDate;
     private LocalDate reservationDue;
     private FilmItem filmItem;
 
-    public Reservation(int reservationNumber,
+    public Reservation(String reservationNumber,
                        String clientID,
                        int employeeNumber,
                        LocalDate reservationDate,
@@ -37,11 +37,11 @@ public class Reservation {
                 "\nReserved film item: " + filmItem.getItemNumer());
     }
 
-    public int getReservationNumber() {
+    public String getReservationNumber() {
         return reservationNumber;
     }
 
-    public void setReservationNumber(int reservationNumber) {
+    public void setReservationNumber(String reservationNumber) {
         this.reservationNumber = reservationNumber;
     }
 

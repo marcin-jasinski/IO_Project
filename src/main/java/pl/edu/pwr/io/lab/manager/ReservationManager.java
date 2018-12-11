@@ -6,6 +6,8 @@ import main.java.pl.edu.pwr.io.lab.film.FilmItem;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalInt;
+import java.util.stream.IntStream;
 
 public class ReservationManager {
 
@@ -16,7 +18,7 @@ public class ReservationManager {
         this.reservationList = new ArrayList<>();
 
         reservationList.add(new Reservation(
-                1251532,
+                "1251532",
                 "123",
                 000241224, LocalDate.of(2018, 11, 12),
                 LocalDate.of(2018, 11, 26), new FilmItem(15122, FilmItem.ItemStatus.RESERVED,
@@ -36,5 +38,18 @@ public class ReservationManager {
         } else {
             System.out.println("\nThere are no reservations for this client");
         }
+    }
+
+    public void deleteReservation(String reservationID){
+
+        int reservationIndex = getReservationIndex(reservationID).getAsInt();
+        reservationList.remove(reservationIndex);
+        System.out.println("\nReservation deleted!");
+    }
+
+    private OptionalInt getReservationIndex(String reservationID){
+        return IntStream.range(0, reservationList.size())
+                .filter(i -> reservationID.equals(reservationList.get(i).getReservationNumber()))
+                .findFirst();
     }
 }
