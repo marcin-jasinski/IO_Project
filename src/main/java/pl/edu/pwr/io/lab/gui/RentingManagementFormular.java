@@ -5,7 +5,7 @@ import main.java.pl.edu.pwr.io.lab.manager.RentingManager;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class RentingManagementFromular {
+public class RentingManagementFormular {
 
     private RentingManager rentingManager = new RentingManager();
     private Scanner scanner = new Scanner(System.in);
@@ -14,7 +14,7 @@ public class RentingManagementFromular {
         System.out.println("\n+++ Renting Management Form +++");
         System.out.println("1 - rent film to a client");
         System.out.println("2 - show rent list for a client");
-        System.out.println("2 - EXIT");
+        System.out.println("3 - EXIT");
         System.out.print("> ");
     }
 
