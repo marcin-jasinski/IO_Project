@@ -8,7 +8,7 @@ public class Film {
         COMEDY, HORROR, THRILLER, SCIFI, ADVENTURE, DOCUMENTARY, NATURE;
     }
 
-    private enum AgeCategory {
+    public enum AgeCategory {
         FORALL(0), MIN12(12), MIN16(16), ADULT(18);
 
         private int value;
