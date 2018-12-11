@@ -59,6 +59,8 @@ public class RentingManagementFromular {
 
         Rent rentToAdd = new Rent(rentNumber, clientID, employeeID, filmItemID, rentDate, returnDate, returnDelay);
         rentingManager.addRentToList(rentToAdd);
+        System.out.println("New reservation added for client:");
+        rentingManager.showReservationsForClient(clientID);
     }
 
     private void showRentListForClient(){

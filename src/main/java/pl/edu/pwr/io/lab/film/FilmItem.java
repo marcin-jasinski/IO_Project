@@ -2,11 +2,11 @@ package main.java.pl.edu.pwr.io.lab.film;
 
 public class FilmItem {
 
-    private enum ItemStatus{
+    public enum ItemStatus{
         RENTED, AVAILABLE, RESERVED, DAMAGED;
     }
 
-    private enum Media{
+    public enum Media{
         VHS, DVD, BLURAY;
     }
 

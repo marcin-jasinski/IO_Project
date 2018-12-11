@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Film {
 
-    private enum FilmType {
+    public enum FilmType {
         COMEDY, HORROR, THRILLER, SCIFI, ADVENTURE, DOCUMENTARY, NATURE;
     }
 
-    private enum AgeCategory {
+    public enum AgeCategory {
         FORALL, MIN12, MIN16, ADULT;
     }
 

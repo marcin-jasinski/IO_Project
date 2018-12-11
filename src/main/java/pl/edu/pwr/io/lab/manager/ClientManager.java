@@ -2,6 +2,7 @@ package main.java.pl.edu.pwr.io.lab.manager;
 
 import main.java.pl.edu.pwr.io.lab.common.Client;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalInt;
@@ -9,7 +10,25 @@ import java.util.stream.IntStream;
 
 public class ClientManager {
 
-    private List<Client> clientList = new ArrayList<>();
+    private List<Client> clientList;
+
+    public ClientManager() {
+        this.clientList = new ArrayList<>();
+        clientList.add(
+                new Client("123",
+                "Jan",
+                "Kowalski",
+                "AWFPWR666",
+                        LocalDate.of(1970, 10, 15),
+                        LocalDate.of(2018, 05, 12)));
+        clientList.add(
+                new Client("666",
+                        "Tomasz",
+                        "Nowak",
+                        "AGHSGGW42",
+                        LocalDate.of(1989, 05, 05),
+                        LocalDate.of(2017, 12, 10)));
+    }
 
     public void showAllClientData(){
         if(clientList.isEmpty()) System.out.println("\nThere are no clients in the database");
