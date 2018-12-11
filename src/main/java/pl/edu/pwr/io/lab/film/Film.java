@@ -9,7 +9,16 @@ public class Film {
     }
 
     private enum AgeCategory {
-        FORALL, MIN12, MIN16, ADULT;
+        FORALL(0), MIN12(12), MIN16(16), ADULT(18);
+
+        private int value;
+        private AgeCategory(int value){
+            this.value = value;
+        }
+
+        public int getValue(){
+            return value;
+        }
     }
 
     private String title;
