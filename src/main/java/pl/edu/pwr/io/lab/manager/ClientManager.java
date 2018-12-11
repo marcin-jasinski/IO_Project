@@ -43,6 +43,21 @@ public class ClientManager {
         clientList.add(newClient);
     }
 
+    public void updateClient(String clientID, String name, String surname, String personalID){
+
+        boolean clientExists = checkIfClientExists(clientID);
+
+        if(clientExists){
+            int clientIndex = getClientIndex(clientID).getAsInt();
+            Client clientToUpdate = clientList.get(clientIndex);
+            clientToUpdate.setName(name);
+            clientToUpdate.setSurname(surname);
+            clientToUpdate.setPersonalIDCardSerial(personalID);
+        } else {
+            System.out.println("There is no such client in the database.");
+        }
+    }
+
     public boolean checkIfClientExists(String clientID) {
         return clientList.stream().anyMatch(c -> c.getClientID().equals(clientID));
     }

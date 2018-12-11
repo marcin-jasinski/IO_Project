@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class ClientManagementFormular {
 
     private ClientManager clientManager = new ClientManager();
+    private Scanner scanner = new Scanner(System.in);
 
     private void showMenu(){
         System.out.println("\n+++ Client Management Form +++");
@@ -23,8 +24,6 @@ public class ClientManagementFormular {
 
     public void show() {
 
-        Scanner scanner = new Scanner(System.in);
-
         showMenu();
         String userChoice = scanner.next();
 
@@ -35,10 +34,7 @@ public class ClientManagementFormular {
                 show();
                 break;
             case "2":
-                scanner.nextLine();
-                System.out.println("\nClientID: ");
-                String clientID = scanner.nextLine();
-                clientManager.showClientData(clientID);
+                showClientData();
                 show();
                 break;
             case "3":
@@ -46,7 +42,7 @@ public class ClientManagementFormular {
                 show();
                 break;
             case "4":
-                // modifyCustomerData();
+                modifyClientData();
                 show();
                 break;
             case "5":
@@ -54,6 +50,13 @@ public class ClientManagementFormular {
                 System.out.println("Exiting...");
                 break;
         }
+    }
+
+    private void showClientData(){
+        System.out.println("\nClientID: ");
+        scanner.nextLine();
+        String clientID = scanner.nextLine();
+        clientManager.showClientData(clientID);
     }
 
     private void addNewClient(){
@@ -83,7 +86,34 @@ public class ClientManagementFormular {
                 registrationDate);
 
         clientManager.addNewClient(newClient);
+
         System.out.println("\nNew client added to database: ");
         clientManager.showClientData(newClientID);
+    }
+
+    private void modifyClientData(){
+        System.out.println("\nClientID: ");
+        scanner.nextLine();
+        String clientID = scanner.nextLine();
+
+        boolean clientExists = clientManager.checkIfClientExists(clientID);
+        if(clientExists){
+            System.out.println("\nCurrent client data: ");
+            clientManager.showClientData(clientID);
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("\nEnter new client data:");
+            System.out.print("Name: ");
+            String newName = scanner.nextLine();
+            System.out.print("Surname: ");
+            String newSurname = scanner.nextLine();
+            System.out.print("Personal ID: ");
+            String newPersonalID = scanner.nextLine();
+
+            clientManager.updateClient(clientID, newName, newSurname, newPersonalID);
+
+            System.out.println("\nUpdated client data:");
+            clientManager.showClientData(clientID);
+        }
     }
 }
