@@ -5,6 +5,7 @@ import main.java.pl.edu.pwr.io.lab.common.Client;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
@@ -42,6 +43,10 @@ public class ClientManager {
 
     public void showClientData(String clientID){
 
+        if(Integer.parseInt(clientID) < 0){
+            throw new IndexOutOfBoundsException("Client index out of bounds.");
+        }
+
         boolean clientExists = checkIfClientExists(clientID);
 
         if(clientExists) {
@@ -55,6 +60,7 @@ public class ClientManager {
                     "\nRegistration date: " + c.getRegistrationDate());
         } else {
             System.out.println("There is no such client in the database.");
+            throw new NoSuchElementException("There is no such client in the database.");
         }
     }
 
@@ -68,6 +74,10 @@ public class ClientManager {
             throw new IndexOutOfBoundsException("Client index out of bounds.");
         }
 
+        if(personalID == null || personalID.isEmpty()) {
+            throw new IllegalArgumentException("PersonalID cannot be null");
+        }
+
         Client clientToUpdate = null;
         boolean clientExists = checkIfClientExists(clientID);
 
@@ -78,7 +88,7 @@ public class ClientManager {
             clientToUpdate.setSurname(surname);
             clientToUpdate.setPersonalIDCardSerial(personalID);
         } else {
-            System.out.println("There is no such client in the database.");
+            throw new NoSuchElementException("There is no such client in the database.");
         }
 
         return clientToUpdate;

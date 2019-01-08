@@ -40,11 +40,16 @@ public class ReservationManager {
         }
     }
 
-    public void deleteReservation(String reservationID){
+    public boolean deleteReservation(String reservationID){
+
+        if(Integer.parseInt(reservationID) < 0){
+            throw new IndexOutOfBoundsException("Incorrect reservationID.");
+        }
 
         int reservationIndex = getReservationIndex(reservationID).getAsInt();
         reservationList.remove(reservationIndex);
         System.out.println("\nReservation deleted!");
+        return true;
     }
 
     private OptionalInt getReservationIndex(String reservationID){

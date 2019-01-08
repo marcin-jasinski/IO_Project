@@ -56,7 +56,7 @@ public class ClientManagerTest {
     }
 
     @Test
-    public void testUpdateClientNullName(){
+    public void testUpdateClientNullNameSurname(){
 
         // given
         String clientID = "123";
@@ -79,5 +79,15 @@ public class ClientManagerTest {
 
         // when
         Client updatedClient = clientManager.updateClient(clientID, "Ignacy", "Krasicki", null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testUpdateClientEmptyPersonalID(){
+
+        // given
+        String clientID = "123";
+
+        // when
+        Client updatedClient = clientManager.updateClient(clientID, "Ignacy", "Krasicki", "");
     }
 }
