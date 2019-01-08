@@ -62,19 +62,26 @@ public class ClientManager {
         clientList.add(newClient);
     }
 
-    public void updateClient(String clientID, String name, String surname, String personalID){
+    public Client updateClient(String clientID, String name, String surname, String personalID){
 
+        if(Integer.parseInt(clientID) < 0){
+            throw new IndexOutOfBoundsException("Client index out of bounds.");
+        }
+
+        Client clientToUpdate = null;
         boolean clientExists = checkIfClientExists(clientID);
 
         if(clientExists){
             int clientIndex = getClientIndex(clientID).getAsInt();
-            Client clientToUpdate = clientList.get(clientIndex);
+            clientToUpdate = clientList.get(clientIndex);
             clientToUpdate.setName(name);
             clientToUpdate.setSurname(surname);
             clientToUpdate.setPersonalIDCardSerial(personalID);
         } else {
             System.out.println("There is no such client in the database.");
         }
+
+        return clientToUpdate;
     }
 
     public boolean checkIfClientExists(String clientID) {
