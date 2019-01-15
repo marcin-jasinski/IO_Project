@@ -12,7 +12,6 @@ public class TestModifyClient extends ColumnFixture {
         try {
         Client updatedClient = SetUp.clientManager.updateClient(data[0],data[1],data[2],data[3]);
         return true;
-
         } catch (IndexOutOfBoundsException ioobe){
             return false;
         } catch (NoSuchElementException nsee){
