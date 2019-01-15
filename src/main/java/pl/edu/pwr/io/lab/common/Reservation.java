@@ -1,6 +1,6 @@
-package main.java.pl.edu.pwr.io.lab.common;
+package pl.edu.pwr.io.lab.common;
 
-import main.java.pl.edu.pwr.io.lab.film.FilmItem;
+import pl.edu.pwr.io.lab.film.FilmItem;
 
 import java.time.LocalDate;
 

@@ -1,8 +1,6 @@
-package main.java;
-
-import main.java.pl.edu.pwr.io.lab.gui.ClientManagementFormular;
-import main.java.pl.edu.pwr.io.lab.gui.RentingManagementFormular;
-import main.java.pl.edu.pwr.io.lab.gui.ReservationManagementFormular;
+import pl.edu.pwr.io.lab.gui.ClientManagementFormular;
+import pl.edu.pwr.io.lab.gui.RentingManagementFormular;
+import pl.edu.pwr.io.lab.gui.ReservationManagementFormular;
 
 import java.util.Scanner;
 

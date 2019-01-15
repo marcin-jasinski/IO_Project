@@ -1,6 +1,6 @@
-package main.java.pl.edu.pwr.io.lab.gui;
+package pl.edu.pwr.io.lab.gui;
 
-import main.java.pl.edu.pwr.io.lab.manager.ReservationManager;
+import pl.edu.pwr.io.lab.manager.ReservationManager;
 
 import java.util.Scanner;
 

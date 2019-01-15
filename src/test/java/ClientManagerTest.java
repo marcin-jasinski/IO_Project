@@ -55,6 +55,7 @@ public class ClientManagerTest {
         assertNull(updatedClient);
     }
 
+    /* @TODO Split into two cases */
     @Test
     public void testUpdateClientNullNameSurname(){
 

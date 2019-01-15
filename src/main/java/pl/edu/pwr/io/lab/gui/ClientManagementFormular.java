@@ -1,8 +1,8 @@
-package main.java.pl.edu.pwr.io.lab.gui;
+package pl.edu.pwr.io.lab.gui;
 
-import main.java.pl.edu.pwr.io.lab.factory.ClientFactory;
-import main.java.pl.edu.pwr.io.lab.manager.ClientManager;
-import main.java.pl.edu.pwr.io.lab.common.Client;
+import pl.edu.pwr.io.lab.factory.ClientFactory;
+import pl.edu.pwr.io.lab.manager.ClientManager;
+import pl.edu.pwr.io.lab.common.Client;
 
 import java.time.LocalDate;
 import java.util.Scanner;
