@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.fitnesse:fitnesse:20190110">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/fitnesse/fitnesse/20190110/fitnesse-20190110.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/fitnesse/fitnesse/20190110/fitnesse-20190110-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/fitnesse/fitnesse/20190110/fitnesse-20190110-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

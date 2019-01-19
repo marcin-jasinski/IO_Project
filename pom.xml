@@ -21,7 +21,18 @@
             <version>4.8.1</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.fitnesse/fitnesse -->
+        <dependency>
+            <groupId>org.fitnesse</groupId>
+            <artifactId>fitnesse</artifactId>
+            <version>20190110</version>
+        </dependency>
+
     </dependencies>
+
+
+
 
 
 </project>

@@ -1,7 +1,7 @@
-package main.java.pl.edu.pwr.io.lab.gui;
+package pl.edu.pwr.io.lab.gui;
 
-import main.java.pl.edu.pwr.io.lab.common.Rent;
-import main.java.pl.edu.pwr.io.lab.manager.RentingManager;
+import pl.edu.pwr.io.lab.common.Rent;
+import pl.edu.pwr.io.lab.manager.RentingManager;
 import java.time.LocalDate;
 import java.util.Scanner;
 
