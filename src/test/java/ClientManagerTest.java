@@ -2,6 +2,8 @@ import org.junit.Test;
 import pl.edu.pwr.io.lab.manager.ClientManager;
 import pl.edu.pwr.io.lab.common.Client;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.Assert.*;
 
 /**
@@ -18,13 +20,13 @@ public class ClientManagerTest {
         String clientID = "123";
 
         // when
-        Client updatedClient = clientManager.updateClient(clientID, "Ignacy", "Krasicki", "321");
+        Client updatedClient = clientManager.updateClient(clientID, "Ignacy", "Krasicki", "BTS456");
 
         // then
         assertNotNull(updatedClient);
         assertEquals("Ignacy", updatedClient.getName());
         assertEquals("Krasicki", updatedClient.getSurname());
-        assertEquals("321", updatedClient.getPersonalIDCardSerial());
+        assertEquals("BTS456", updatedClient.getPersonalIDCardSerial());
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
@@ -34,19 +36,58 @@ public class ClientManagerTest {
         String clientID = "-1";
 
         // when
-        Client updatedClient = clientManager.updateClient(clientID, "Ignacy", "Krasicki", "321");
+        Client updatedClient = clientManager.updateClient(clientID, "Ignacy", "Krasicki", "BTS456");
+
+        // then
+        assertNull(updatedClient);
     }
 
-    @Test
+    @Test(expected = NoSuchElementException.class)
     public void testClientUpdateNonExistentID(){
 
         // given
         String clientID = "112412";
 
         // when
-        Client updatedClient = clientManager.updateClient(clientID,"Ignacy", "Krasicki", "321");
+        Client updatedClient = clientManager.updateClient(clientID,"Ignacy", "Krasicki", "BTS456");
 
         // then
         assertNull(updatedClient);
+    }
+
+    @Test
+    public void testUpdateClientNullNameSurname(){
+
+        // given
+        String clientID = "123";
+
+        // when
+        Client updatedClient = clientManager.updateClient(clientID, null, null, "BTS456");
+
+        // then
+        assertNotNull(updatedClient);
+        assertNull(updatedClient.getName());
+        assertNull(updatedClient.getSurname());
+        assertEquals("BTS456", updatedClient.getPersonalIDCardSerial());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testUpdateClientNullPersonalID(){
+
+        // given
+        String clientID = "123";
+
+        // when
+        Client updatedClient = clientManager.updateClient(clientID, "Ignacy", "Krasicki", null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testUpdateClientEmptyPersonalID(){
+
+        // given
+        String clientID = "123";
+
+        // when
+        Client updatedClient = clientManager.updateClient(clientID, "Ignacy", "Krasicki", "");
     }
 }
