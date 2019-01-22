@@ -1,4 +1,4 @@
-package main.java.pl.edu.pwr.io.lab.film;
+package pl.edu.pwr.io.lab.film;
 
 import java.util.List;
 

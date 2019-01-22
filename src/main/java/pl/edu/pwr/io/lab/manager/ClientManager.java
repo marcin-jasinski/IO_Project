@@ -1,6 +1,6 @@
-package main.java.pl.edu.pwr.io.lab.manager;
+package pl.edu.pwr.io.lab.manager;
 
-import main.java.pl.edu.pwr.io.lab.common.Client;
+import pl.edu.pwr.io.lab.common.Client;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
